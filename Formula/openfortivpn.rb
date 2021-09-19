@@ -18,6 +18,8 @@ class Openfortivpn < Formula
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
 
+  conflicts_with "openfortivpn-tunnel", because: "`openfortivpn-tunnel` is an alias"
+
   def install
     system "./autogen.sh"
     system "./configure", "--disable-dependency-tracking",
